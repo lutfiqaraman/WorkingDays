@@ -27,7 +27,7 @@ namespace WorkingDays
 
             for (DateTime date = startDate; date <= endDate; date = date.AddDays(1))
             {
-                if (date.DayOfWeek.ToString() == daysofweekend[0] || date.DayOfWeek.ToString() == daysofweekend[1])
+                if (daysofweekend.Contains(date.DayOfWeek.ToString()))
                     daysoff += 1;                
             }
 
