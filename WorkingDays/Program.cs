@@ -10,7 +10,9 @@ namespace WorkingDays
     {
         static void Main(string[] args)
         {
-            int daysoff = 0;
+            int Daysoff = 0;
+            int Days = 0;
+            int WorkingDays = 0;
 
             //off days are : Friday and Saturday
             string[] daysofweekend = 
@@ -27,17 +29,19 @@ namespace WorkingDays
 
             for (DateTime date = startDate; date <= endDate; date = date.AddDays(1))
             {
+                Days += 1;
+
                 if (daysofweekend.Contains(date.DayOfWeek.ToString()))
-                    daysoff += 1;                
+                    Daysoff += 1;
+                
             }
 
-            int totalDays = (int) (endDate - startDate).TotalDays;
-            int workingdays = totalDays - daysoff;
+            WorkingDays = Days - Daysoff;
 
             Console.WriteLine("From: " + startDate.ToShortDateString() + " To: " + endDate.ToShortDateString());
-            Console.WriteLine("Days : {0}", totalDays);
-            Console.WriteLine("Working Days: {0}", workingdays);
-            Console.WriteLine("Off Days: {0}", daysoff);
+            Console.WriteLine("Days : {0}", Days);
+            Console.WriteLine("Working Days: {0}", WorkingDays);
+            Console.WriteLine("Off Days: {0}", Daysoff);
 
             Console.ReadKey();
         }
