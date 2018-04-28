@@ -18,7 +18,7 @@ namespace WorkingDays
 
             string format = "dd/MM/yyyy";
             CultureInfo provider = CultureInfo.InvariantCulture;
-            CultureInfo culture = new CultureInfo("pt-BR");
+            CultureInfo culture = new CultureInfo("ar-JO");
 
             //off days are : Friday and Saturday
             string[] daysofweekend = 
